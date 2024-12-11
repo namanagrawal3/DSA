@@ -2,7 +2,7 @@ package Sliding_Window;
 
 import java.util.HashMap;
 
-public class Minimum_window_substring {
+public class Minimum_Window_Substring {
     public static void main(String[] args) {
         //String s = "ADOBECODEBANC";
         //String t = "ABC";

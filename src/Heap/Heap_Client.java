@@ -20,7 +20,7 @@ public class Heap_Client {
         System.out.println(hp.get());
         hp.display();
 
-        PriorityQueue<Integer> pq1 = new PriorityQueue<>();                                  // min-Heap (byDefault)
-        PriorityQueue<Integer> pq2 = new PriorityQueue<>(Collections.reverseOrder());        // max-Heap
+        PriorityQueue<Integer> pq1 = new PriorityQueue<>();                               // min-Heap (byDefault)
+        PriorityQueue<Integer> pq2 = new PriorityQueue<>(Collections.reverseOrder());     // max-Heap
     }
 }

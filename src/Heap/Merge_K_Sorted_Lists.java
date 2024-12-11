@@ -15,7 +15,7 @@ public class Merge_K_Sorted_Lists {
     class Solution {
         public ListNode mergeKLists(ListNode[] lists) {
             PriorityQueue<ListNode> pq = new PriorityQueue<>(new Comparator<ListNode>() {
-                @Override
+                @Override                               // min-Heap
                 public int compare(ListNode o1, ListNode o2) {
                     return o1.val - o2.val;
                 }

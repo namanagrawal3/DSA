@@ -2,10 +2,10 @@ package Heap;
 
 import java.util.ArrayList;
 
-public class Heap_Implement {                                       // min-heap
+public class Heap_Implement {            // min-heap
     private ArrayList<Integer> ll = new ArrayList<>();
 
-    public void add(int item) {
+    public void add(int item) {          // we are making the Heap using 'Insertion Method' (bottom-up)
         ll.add(item);
         upHeapify(ll.size()-1);
     }
@@ -25,7 +25,7 @@ public class Heap_Implement {                                       // min-heap
     public int remove() {
         swapFun(0, ll.size()-1);
         int rv = ll.remove(ll.size()-1);
-        downHeapify(0);
+        downHeapify(0);                 // we are now 'adjusting' the top element (top-down)
         return rv;
     }
     private void downHeapify(int pi) {

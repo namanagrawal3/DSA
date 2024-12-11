@@ -54,6 +54,7 @@ public class Quick_Sort {
                 arr[j] = temp;
             }
         }
+
         int temp = arr[si];          // swap(pivot, arr[j])
         arr[si] = arr[j];
         arr[j] = temp;
