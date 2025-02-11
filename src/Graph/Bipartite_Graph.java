@@ -8,13 +8,13 @@ public class Bipartite_Graph {
     static class Pair {
         int val;
         int dist;
-        public Pair(int value, int distance) {
-            this.val = value;
-            this.dist = distance;
+        public Pair(int val, int dist) {
+            this.val = val;
+            this.dist = dist;
         }
     }
     public static void main(String[] args) {
-        int[][] graph = {{1,2,3},{0,2},{0,1,3},{0,2}};
+        int[][] graph = {{1,2,3},{0,2},{0,1,3},{0,2}};                    // Jagged Array
         System.out.println(isBipartite(graph));
     }
     public static boolean isBipartite(int[][] graph) {
@@ -35,8 +35,7 @@ public class Bipartite_Graph {
                 if (visited.containsKey(rv.val)) {
                     if (visited.get(rv.val) != rv.dist)                 // means odd length cycle is present
                         return false;
-                    else
-                        continue;
+                    continue;
                 }
 
                 visited.put(rv.val, rv.dist);

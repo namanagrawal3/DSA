@@ -4,10 +4,10 @@ import java.util.*;
 
 public class Graph {
     private HashMap<Integer, HashMap<Integer, Integer>> map;
-    public Graph(int vertices) {
+    public Graph(int v) {
         this.map = new HashMap<>();
 
-        for (int i = 1; i <= vertices; i++) {
+        for (int i = 1; i <= v; i++) {
             map.put(i, new HashMap<>());
         }
     }
@@ -22,11 +22,12 @@ public class Graph {
         return map.containsKey(v);
     }
     public int countEdge() {
-        int count = 0;
+        int cnt = 0;
         for (HashMap<Integer, Integer> mp : map.values()) {
-            count += mp.size();
+            cnt += mp.size();
         }
-        return count/2;
+
+        return cnt/2;
     }
     public void removeEdge(int v1, int v2) {
         if (containsEdge(v1, v2)) {
@@ -35,9 +36,10 @@ public class Graph {
         }
     }
     public void removeVertex(int v) {
-        for (int neigh : map.get(v).keySet()) {
-            map.get(neigh).remove(v);
+        for (int nbr : map.get(v).keySet()) {
+            map.get(nbr).remove(v);
         }
+
         map.remove(v);
     }
     public void display() {
@@ -58,11 +60,11 @@ public class Graph {
                     return true;
             }
         }
-        visited.remove(src);                                    // here no need to do backtrack
+        visited.remove(src);                                  // here no need to do backtrack
 
         return false;
     }
-    public void printAllPath(int src, int des, HashSet<Integer> visited, String ans) {
+    public void printAllPaths(int src, int des, HashSet<Integer> visited, String ans) {
         if (src == des) {
             System.out.println(ans + "-->" + src);
             return;
@@ -72,8 +74,9 @@ public class Graph {
 
         for (int nbrs : map.get(src).keySet()) {
             if (!visited.contains(nbrs))
-                printAllPath(nbrs, des, visited, ans + "-->" + src);
+                printAllPaths(nbrs, des, visited, ans + "-->" + src);
         }
+
         visited.remove(src);
     }
     public boolean bfs(int src, int des) {
@@ -153,7 +156,7 @@ public class Graph {
                 if (visited.contains(rv))                       // 2. ignore if already visited
                     continue;
                 visited.add(rv);                                // 3. mark visited
-                System.out.print(rv + " ");                           // 4. self work
+                System.out.print(rv + " ");                     // 4. self work
                 for (int nbrs : map.get(rv).keySet()) {
                     if (!visited.contains(nbrs))
                         st.push(nbrs);                          // 5. add unvisited nbrs in queue

@@ -19,7 +19,7 @@ public class Graph_Client {
 
         System.out.println(g.hasPath(1,6, new HashSet<>()));
 
-        g.printAllPath(1,6,new HashSet<>(), "");
+        g.printAllPaths(1,6,new HashSet<>(), "");
 
         System.out.println(g.bfs(1,6));
 
