@@ -34,6 +34,7 @@ public class Delete_Node_in_a_BST {
                     root.left = deleteNode(root.left, max);
                 }
             }
+
             return root;
         }
         public static int maxFun(TreeNode root) {

@@ -11,13 +11,13 @@ public class Construct_Tree_using_Level_Order {
     Scanner sc = new Scanner(System.in);
     private Node root;
     public Construct_Tree_using_Level_Order() {
-        root = createTree();
+        createTree();
     }
-    private Node createTree() {
+    private void createTree() {
         int item = sc.nextInt();
         Node nn = new Node();
         nn.val = item;
-        root = nn;
+        this.root = nn;
 
         Queue<Node> q = new ArrayDeque<>();
         q.add(root);
@@ -40,8 +40,6 @@ public class Construct_Tree_using_Level_Order {
                 q.add(n);
             }
         }
-
-        return root;
     }
     public void preOrderTraverse() {
         preOrder(root);

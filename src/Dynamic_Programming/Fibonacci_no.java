@@ -23,7 +23,6 @@ public class Fibonacci_no {
     public static int fibTD(int n, int[] dp) {  // Top-Down (Memoization) approach
         if (n <= 1)
             return n;
-
         if (dp[n] != 0)
             return dp[n];
 
@@ -32,7 +31,7 @@ public class Fibonacci_no {
 
         return dp[n] = f1+f2;
     }
-    public static int fibBU(int n) {             // Bottom-Up (Tabulation) approach
+    public static int fibBU(int n) {           // Bottom-Up (Tabulation) approach
         int[] dp = new int[n+1];
         dp[0] = 0;
         dp[1] = 1;

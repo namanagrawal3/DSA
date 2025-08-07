@@ -26,9 +26,8 @@ public class Valentine_Magic {
         if (dp[i][j] != -1)
             return dp[i][j];
 
-        int pair = 0, not_pair = 0;
-        pair = Math.abs(boys[i] - girls[j]) + pairTD(boys, girls, i+1, j+1, dp);
-        not_pair = pairTD(boys, girls, i, j+1, dp);
+        int pair = Math.abs(boys[i] - girls[j]) + pairTD(boys, girls, i+1, j+1, dp);
+        int not_pair = pairTD(boys, girls, i, j+1, dp);
 
         return dp[i][j] = Math.min(pair, not_pair);
     }

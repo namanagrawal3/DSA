@@ -15,7 +15,7 @@ public class Balanced_Binary_Tree {
     }
 
     class Solution {
-        public boolean isBalanced(TreeNode root) {                          // O(N^2)
+        public boolean isBalanced(TreeNode root) {                          // O(N^2) approach
             if (root == null)
                 return true;
 

@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 public class House_Robber {
     public static void main(String[] args) {
-        int[] arr = {5,2,1,11};
+        int[] arr = {5, 2, 1, 11};
 
         int[] dp = new int[arr.length];
         Arrays.fill(dp, -1);
@@ -15,7 +15,6 @@ public class House_Robber {
     public static int robTD(int[] arr, int idx, int[] dp) {
         if (idx >= arr.length)
             return 0;
-
         if (dp[idx] != -1)
             return dp[idx];
 
@@ -26,8 +25,7 @@ public class House_Robber {
     }
     public static int robBU(int[] arr) {
         int n = arr.length;
-        int[] dp = new int[n];
-
+        int[] dp = new int[n];            // 'dp[i]' stores the max money that can be robbed from house at index 'i' to '0'
         dp[0] = arr[0];
         dp[1] = Math.max(arr[0], arr[1]);
 

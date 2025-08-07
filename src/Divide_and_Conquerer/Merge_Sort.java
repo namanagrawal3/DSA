@@ -1,14 +1,15 @@
 package Divide_and_Conquerer;
 
+import java.util.Arrays;
+
 public class Merge_Sort {
     public static void main(String[] args) {
         int[] arr = {0, 7, 5, 1, 4, 3, -3, 10};
 
         int[] ans = mergeSort(arr, 0, arr.length-1);
 
-        for (int i = 0; i < ans.length; i++) {                  // original array is not sorted (not inplace)
-            System.out.print(ans[i]+" ");
-        }
+        System.out.println(Arrays.toString(ans));                  // original array is not sorted (not inplace)
+        System.out.println(Arrays.toString(arr));
     }
     public static int[] mergeSort(int[] arr, int si, int ei) {
         if (si == ei)

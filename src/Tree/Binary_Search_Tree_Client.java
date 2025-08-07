@@ -7,7 +7,7 @@ public class Binary_Search_Tree_Client {
         Binary_Search_Tree bt = new Binary_Search_Tree(inOrder);
 
         System.out.println(bt.max());
-        System.out.println(bt.search(65));
         System.out.println(bt.search(60));
+        System.out.println(bt.search(65));
     }
 }

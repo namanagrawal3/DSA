@@ -10,6 +10,7 @@ public class BinaryTree_Client {
         System.out.println();
 
         System.out.println(bt.findMax());
+        System.out.println(bt.find(30));
         System.out.println(bt.find(50));
         System.out.println(bt.heightOfTree());
         System.out.println();

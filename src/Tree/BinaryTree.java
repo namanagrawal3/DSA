@@ -58,7 +58,6 @@ public class BinaryTree {
     private boolean findNode(Node node, int item) {               // O(N)
         if (node == null)
             return false;
-
         if (node.val == item)
             return true;
 
@@ -142,7 +141,6 @@ public class BinaryTree {
 
             if (rv.left != null)
                 q.add(rv.left);
-
             if (rv.right != null)
                 q.add(rv.right);
         }

@@ -1,41 +1,24 @@
 package Divide_and_Conquerer;
 
+import java.util.Arrays;
+
 public class Quick_Sort {
     public static void main(String[] args) {
         int[] arr = {5, 7, 2, 3, 0, -3, 1, 4};
-        int n = arr.length;
 
+        int n = arr.length;
         quickSort(arr,0,n-1);
 
-        for (int i = 0; i < n; i++) {                       // original array is sorted itself
-            System.out.print(arr[i] + " ");
-        }
+        System.out.println(Arrays.toString(arr));                       // Original array is sorted itself (in-place)
     }
     public static void quickSort(int[] arr, int si, int ei) {
         if (si >= ei)
             return;
 
-//        int idx = correctPosition(arr,si,ei);
         int idx = partitionFun(arr, si, ei);
 
         quickSort(arr, si, idx-1);
         quickSort(arr, idx+1, ei);
-    }
-    public static int correctPosition(int[] arr,int si,int ei){
-        int item = arr[ei];
-        int idx = si;
-        for(int i=si;i<ei;i++){
-            if(arr[i] <= item){
-                int temp = arr[idx];    // swap(i,idx)
-                arr[idx] = arr[i];
-                arr[i] = temp;
-                idx++;
-            }
-        }
-        int temp = arr[idx];            // swap(idx,ei)
-        arr[idx] = arr[ei];
-        arr[ei] = temp;
-        return idx;
     }
     public static int partitionFun(int[] arr, int si, int ei) {
         int i = si, j = ei;

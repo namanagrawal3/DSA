@@ -4,42 +4,50 @@ import java.util.HashMap;
 
 public class Minimum_Window_Substring {
     public static void main(String[] args) {
-        //String s = "ADOBECODEBANC";
-        //String t = "ABC";
-        String s = "aaaaaaaaaaaabbbbbcdd";
-        String t = "abcdd";
-        HashMap<Character,Integer> map=new HashMap<>();
-        for(int i=0;i<t.length();i++){
-            char ch = t.charAt(i);
-            map.put(ch, map.getOrDefault(ch,0)+1);
+        String s1 = "timetopractice", s2 = "toc";
+
+        int l1 = s1.length();
+        int l2 = s2.length();
+        HashMap<Character, Integer> map = new HashMap<>();
+
+        for (int i = 0; i < l2; i++) {
+            char ch = s2.charAt(i);
+            map.put(ch, map.getOrDefault(ch, 0) + 1);
         }
+
+        int start = -1;
+        int minLen = Integer.MAX_VALUE;
+        int si = 0, ei = 0;
         int count = map.size();
-        int i=0,j=0;
-        int min = Integer.MAX_VALUE;
-        int start = -1,end = -1;
-        while(j < s.length()){
-            char ch = s.charAt(j);
-            if(map.containsKey(ch)){
+
+        while (ei < l1) {
+            char ch = s1.charAt(ei);
+            if (map.containsKey(ch)) {
                 map.put(ch, map.get(ch) - 1);
-                if(map.get(ch) == 0)
+                if (map.get(ch) == 0)
                     count--;
             }
-            while(count == 0){
-                if(min > j-i+1){
-                    min = j-i+1;
-                    start = i;
-                    end = j;
+
+            while (count == 0 && si <= ei) {
+                if ((ei-si+1) < minLen) {
+                    minLen = ei-si+1;
+                    start = si;
                 }
-                char ch2 = s.charAt(i);
-                if(map.containsKey(ch2)) {
-                    map.put(ch2, map.get(ch2) + 1);
-                    if(map.get(ch2) > 0)
+
+                char sch = s1.charAt(si);
+                if (map.containsKey(sch)) {
+                    map.put(sch, map.get(sch) + 1);
+                    if (map.get(sch) == 1)
                         count++;
                 }
-                i++;
+                si++;
             }
-            j++;
+
+            ei++;
         }
-        System.out.println(s.substring(start,end+1));
+
+        if (start == -1)
+            return;
+        System.out.println(s1.substring(start, start + minLen));
     }
 }

@@ -1,43 +1,23 @@
 package Divide_and_Conquerer;
 
+import java.util.Arrays;
+
 public class Partition_in_Array {
     public static void main(String[] args) {
 
         // Leetcode Problem - 2161
-        // if a user gives a particular index instead of last index
-        // then only swap that index with the last index and remaining code same
+        // if a user gives a particular index instead of last/first index as Pivot
+        // then only swap that index with the last/first index and remaining code same
 
-//        int[] arr = {5, 7, 2, 3, 8, 1, 4};
+        int[] arr = {5, 7, 2, 3, 8, 1, 4};
 //        int[] arr = {1,4,2,3};
-        int[] arr = {4,2,3};
+//        int[] arr = {4,2,3};
+
         int n = arr.length;
+        int idx2 = partitionFun(arr,0,n-1);                 // Partition-Algorithm
 
-//        int idx = correctPosition(arr,0,n-1);
-//        System.out.println(idx);
-
-        int idx2 = partitionFun(arr,0,n-1);
         System.out.println(idx2);
-
-        for (int i = 0; i < n; i++) {
-            System.out.print(arr[i] + " ");
-        }
-    }
-    public static int correctPosition(int[] arr, int si, int ei) {
-        int item = arr[ei];
-        int idx = si;
-
-        for (int i = si; i < ei; i++) {
-            if (arr[i] <= item) {
-                int temp = arr[idx];            // swap(i,idx)
-                arr[idx] = arr[i];
-                arr[i] = temp;
-                idx++;
-            }
-        }
-        int temp = arr[idx];                   // swap(idx,ei)
-        arr[idx] = arr[ei];
-        arr[ei] = temp;
-        return idx;
+        System.out.println(Arrays.toString(arr));
     }
     public static int partitionFun(int[] arr, int si, int ei) {
         int i = si, j = ei;
@@ -57,7 +37,7 @@ public class Partition_in_Array {
                 arr[j] = temp;
             }
         }
-        int temp = arr[si];          // swap(pivot, arr[j])
+        int temp = arr[si];             // swap(pivot, arr[j])
         arr[si] = arr[j];
         arr[j] = temp;
 

@@ -1,7 +1,7 @@
 package Oops_1;
 
 public class Queue {
-    protected int[] data;               // by default null
+    protected int[] data;                 // by default null (Protected so that can be inherited outside)
     protected int front;                  // by default 0
     private int size;
     public Queue() {
@@ -21,16 +21,16 @@ public class Queue {
     }
     public void enqueue(int item) throws Exception {
         if (isFull()) {
-            throw new Exception("Sorry sir, your queue is Full !!");
+            throw new Exception("Element can't be added, Queue is Full!!");
         }
-//        int idx = this.size + this.front;                                         //  Linear Queue
+//        int idx = this.size + this.front;                                         // Linear Queue
         int idx = (this.size + this.front) % this.data.length;                      // Circular Queue
         this.data[idx] = item;
         this.size++;
     }
     public int dequeue() throws Exception {
         if (isEmpty()) {
-            throw new Exception("Sorry sir, your queue is Empty !!");
+            throw new Exception("Element can't be deleted, Queue is Empty!!");
         }
         int val = this.data[this.front];
 //        this.front = this.front + 1;                                              // Linear Queue
@@ -40,7 +40,7 @@ public class Queue {
     }
     public int getFront() throws Exception {
         if (isEmpty()) {
-            throw new Exception("Sorry sir, your queue is Empty !!");
+            throw new Exception("Queue has no element!!");
         }
         return this.data[this.front];
     }

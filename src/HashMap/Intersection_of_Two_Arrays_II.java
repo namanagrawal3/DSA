@@ -3,8 +3,8 @@ import java.util.*;
 
 public class Intersection_of_Two_Arrays_II {
     public static void main(String[] args) {
-        int[] nums1 = {1,2,2,1};
-        int[] nums2 = {2,2};
+        int[] nums1 = {1, 2, 2, 1};
+        int[] nums2 = {2, 2};
 
         HashMap<Integer, Integer> map = new HashMap<>();
         List<Integer> l = new ArrayList<>();

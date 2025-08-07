@@ -11,7 +11,7 @@ public class Longest_Increasing_Subsequence {
     }
     public static int n2Approach(int[] nums) {
         int n = nums.length;
-        int[] len = new int[n];
+        int[] len = new int[n];                     // 'len[i]' stores the length of the lis ending at index 'i'
         Arrays.fill(len, 1);
 
         for (int i = 1; i < n; i++) {
@@ -32,7 +32,7 @@ public class Longest_Increasing_Subsequence {
     }
     public static int nlognApproach(int[] nums) {
         int n = nums.length;
-        int[] dp = new int[n];          // stores the end-points of LIS (in a sorted manner)
+        int[] dp = new int[n];                      // stores the end-points of all LIS (in a sorted manner)
         dp[0] = nums[0];
         int len = 1;
 
@@ -52,7 +52,6 @@ public class Longest_Increasing_Subsequence {
     public static int binarySearch(int[] dp, int si, int ei, int target) {
         while (si <= ei) {
             int mid = si + (ei-si)/2;
-
             if (dp[mid] >= target)
                 ei = mid - 1;
             else

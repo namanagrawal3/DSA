@@ -17,7 +17,6 @@ public class Longest_Common_Subsequence {
     public static int lcsTD(String s1, String s2, int i, int j, int[][] dp) {
         if (i == s1.length() || j == s2.length())
             return 0;
-
         if (dp[i][j] != -1)
             return dp[i][j];
 
@@ -36,7 +35,7 @@ public class Longest_Common_Subsequence {
     public static int lcsBU(String s1, String s2) {
         int[][] dp = new int[s1.length()+1][s2.length()+1];
 
-        for (int i = 1; i < dp.length; i++) {
+        for (int i = 1; i < dp.length; i++) {               // 'dp[i][j]' stores the lcs of strings from index '0' to 'i' & 'j'
             for (int j = 1; j < dp[0].length; j++) {
                 if (s1.charAt(i-1) == s2.charAt(j-1))
                     dp[i][j] = 1 + dp[i-1][j-1];

@@ -15,7 +15,7 @@ public class Diameter_of_Binary_Tree {
     }
 
     class Solution {
-        public int diameterOfBinaryTree(TreeNode root) {                        // O(N^2)
+        public int diameterOfBinaryTree(TreeNode root) {                        // O(N^2) approach
             if (root == null)
                 return 0;
 

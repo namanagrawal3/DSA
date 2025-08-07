@@ -5,7 +5,7 @@ public class Stack_I_Class implements Stack_I{
     @Override
     public void push(int item) {
         System.out.println(Stack_I.x);
-//        Stack_I.x = Stack_I.x + 2;                            // variable can't be modified because of 'final' keyword
+//        Stack_I.x = Stack_I.x + 2;                         // variable can't be modified because of 'final' keyword
     }
 
     @Override

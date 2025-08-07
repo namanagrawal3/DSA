@@ -21,7 +21,6 @@ public class Sum_Root_To_Leaf {
         public static int solveFun(TreeNode node, int sum) {
             if (node == null)
                 return 0;
-
             if (node.left == null && node.right == null)
                 return sum*10 + node.val;
 

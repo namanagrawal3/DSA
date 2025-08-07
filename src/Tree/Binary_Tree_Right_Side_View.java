@@ -29,14 +29,13 @@ public class Binary_Tree_Right_Side_View {
         public static void solveFun(TreeNode node, int currLevel, List<Integer> ans) {
             if (node == null)
                 return;
-
             if (currLevel > maxLevel) {
                 ans.add(node.val);
                 maxLevel = currLevel;
             }
 
-            solveFun(node.right, currLevel + 1, ans);                           // for the left-side view
-            solveFun(node.left, currLevel + 1, ans);                            // first left-child call then right-child call
+            solveFun(node.right, currLevel + 1, ans);               // for the left-side view
+            solveFun(node.left, currLevel + 1, ans);                // first left-child call then right-child call
         }
     }
 }

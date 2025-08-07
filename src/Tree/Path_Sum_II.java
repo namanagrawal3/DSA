@@ -29,7 +29,6 @@ public class Path_Sum_II {
         public static void solveFun(TreeNode node, int target, List<Integer> l, List<List<Integer>> ans) {
             if (node == null)
                 return;
-
             if (node.left == null && node.right == null) {
                 if (target - node.val == 0) {
                     l.add(node.val);

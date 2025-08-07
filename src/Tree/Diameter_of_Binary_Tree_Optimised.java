@@ -22,19 +22,19 @@ public class Diameter_of_Binary_Tree_Optimised {
         public int diameterOfBinaryTree(TreeNode root) {
             return diameter(root).dt;
         }
-        public DiaPair diameter(TreeNode node) {                            // O(N)
+        public DiaPair diameter(TreeNode node) {                            // O(N) approach
             if (node == null)
                 return new DiaPair();
 
             DiaPair left = diameter(node.left);
             DiaPair right = diameter(node.right);
 
-            DiaPair root = new DiaPair();
-            int self = left.ht + right.ht + 2;
-            root.dt = Math.max(self, Math.max(left.dt, right.dt));
-            root.ht = Math.max(left.ht, right.ht) + 1;
+            DiaPair self = new DiaPair();
+            int selfDia = left.ht + right.ht + 2;
+            self.dt = Math.max(selfDia, Math.max(left.dt, right.dt));
+            self.ht = Math.max(left.ht, right.ht) + 1;
 
-            return root;
+            return self;
         }
     }
 }

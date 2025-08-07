@@ -19,7 +19,7 @@ public class Balanced_Binary_Tree_Optimised {
             boolean isBalance = true;
             int ht = -1;                             // Height
         }
-        public boolean isBalanced(TreeNode root) {                              // O(N)
+        public boolean isBalanced(TreeNode root) {                              // O(N) approach
             return checkFun(root).isBalance;
         }
         public Pair checkFun(TreeNode node) {
@@ -31,8 +31,7 @@ public class Balanced_Binary_Tree_Optimised {
 
             Pair self = new Pair();
             self.ht = Math.max(left.ht, right.ht) + 1;
-            boolean selfBalance = Math.abs(left.ht - right.ht) <= 1;
-            self.isBalance = left.isBalance && right.isBalance && selfBalance;
+            self.isBalance = left.isBalance && right.isBalance && (Math.abs(left.ht - right.ht) <= 1);
 
             return self;
         }

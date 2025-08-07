@@ -13,8 +13,8 @@ public class Sort_List {
             if (head == null || head.next == null)
                 return head;
 
+            ListNode mid = midFun(head);                // first mid (not second mid)
             ListNode l1 = head;
-            ListNode mid = midFun(head);                // first mid
             ListNode l2 = mid.next;
             mid.next = null;
 
@@ -31,6 +31,7 @@ public class Sort_List {
                 slow = slow.next;
                 fast = fast.next.next;
             }
+
             return slow;
         }
         public ListNode mergeTwoLists(ListNode l1, ListNode l2) {
@@ -49,14 +50,13 @@ public class Sort_List {
                     l2 = l2.next;
                 }
             }
-            if (l1 == null) {
+
+            if (l1 == null)
                 temp.next = l2;
-                return dummy.next;
-            }
-            if (l2 == null) {
+
+            if (l2 == null)
                 temp.next = l1;
-                return dummy.next;
-            }
+
             return dummy.next;
         }
     }

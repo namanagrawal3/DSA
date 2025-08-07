@@ -13,7 +13,9 @@ public class Path_Sum_III {
     }
     class Solution {
         public int pathSum(TreeNode root, int targetSum) {
-            return pathFun(root, targetSum);
+            return pathFun(root, targetSum);                        // O(n^2) Approach
+
+            // O(n) Approach --> PrefixSum using HashMap (similar to count subarrays sum k)
         }
         public int pathFun(TreeNode node, long targetSum) {
             if (node == null)

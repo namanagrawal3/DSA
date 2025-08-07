@@ -19,7 +19,6 @@ public class Min_Cost_Climbing_Stairs {
     public static int costTD(int[] cost, int idx, int[] dp) {
         if (idx >= cost.length)
             return 0;
-
         if (dp[idx] != -1)
             return dp[idx];
 
@@ -30,7 +29,7 @@ public class Min_Cost_Climbing_Stairs {
     }
     public static int costBU(int[] cost) {
         int n = cost.length;
-        int[] dp = new int[n];
+        int[] dp = new int[n];          // 'dp[i]' stores the min cost to come downstairs to '0' from step at index 'i'
 
         dp[0] = cost[0];
         dp[1] = cost[1];

@@ -34,7 +34,7 @@ public class Largest_BST_Subtree {
             BstPair self = new BstPair();
             self.min = Math.min(left.min, Math.min(right.min, node.val));
             self.max = Math.max(left.max, Math.max(right.max, node.val));
-            self.isBst = left.isBst && right.isBst && node.val > left.max && node.val < right.min;
+            self.isBst = left.isBst && right.isBst && (node.val > left.max && node.val < right.min);
 
             if (self.isBst)
                 self.count = left.count + right.count + 1;

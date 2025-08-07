@@ -4,25 +4,25 @@ import java.util.Arrays;
 
 public class Wine_Problem {
     public static void main(String[] args) {
-        int[] pro = {2,3,5,1,4};
+        int[] profit = {2, 3, 5, 1, 4};
 
-        int[][] dp = new int[pro.length][pro.length];
+        int[][] dp = new int[profit.length][profit.length];
         for (int[] r : dp) {
             Arrays.fill(r, -1);
         }
-        System.out.println(wineTD(pro, 0, pro.length-1, 1, dp));               // Future DP
+        System.out.println(wineTD(profit, profit.length, 0, profit.length-1, dp));      // Future DP
 
-        System.out.println(wineBU(pro));
+        System.out.println(wineBU(profit));
     }
-    public static int wineTD(int[] pro, int si, int ei, int year, int[][] dp) {
+    public static int wineTD(int[] profit, int n, int si, int ei, int[][] dp) {
         if (si > ei)
             return 0;
-
         if (dp[si][ei] != -1)
             return dp[si][ei];
 
-        int first = pro[si]*year + wineTD(pro, si+1, ei, year+1, dp);
-        int last = pro[ei]*year + wineTD(pro, si, ei-1, year+1, dp);
+        int year = n + 1 - (ei-si+1);
+        int first = (profit[si] * year) + wineTD(profit, n, si+1, ei, dp);
+        int last = (profit[ei] * year) + wineTD(profit, n, si, ei-1, dp);
 
         return dp[si][ei] = Math.max(first, last);
     }

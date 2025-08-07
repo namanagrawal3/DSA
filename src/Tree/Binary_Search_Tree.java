@@ -15,7 +15,6 @@ public class Binary_Search_Tree {
             return null;
 
         int mid = si + (ei - si)/2;
-
         Node nn = new Node();
         nn.val = inOrder[mid];
 
